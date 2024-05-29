@@ -16,27 +16,32 @@ export default function TextForm(props) {
       const regex = /[aeiouAEIOU]+/g;
       const matches = text.match(regex);
       setSyllables(matches.length);
+      props.showAlert("Syllables displayed" , "primary");
     };
 
     const handleUpperCase = ()=> {
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Text converted to Uppercase" , "primary");
     }
 
     const handleLowerCase = ()=> {
         let lowerText = text.toLowerCase();
         setText(lowerText);
+        props.showAlert("Text converted to Lowercase" , "primary");
     }
 
     const handleCopy = ()=> {
         navigator.clipboard.writeText(text);
         alert("Text copied to Clipboard!");
+        props.showAlert("Text copied Successfully" , "success");
     }
 
     const handleClearText = ()=> {
         let clearText = "";
         setSyllables(0);
         setText(clearText);
+        props.showAlert("Text has been cleared" , "danger");
     }
 
     const handleChange = (event)=> {
@@ -49,7 +54,7 @@ export default function TextForm(props) {
         <div className='container'>
             <h1>{props.heading}</h1>
             <div className="container mb-3">
-                <textarea className="form-control" value={text} onChange={handleChange} id="exampleFormControlTextarea1" rows="10"></textarea>
+                <textarea className={`form-control bg-${props.mode} text-${props.mode === 'light'?'dark':'light'}`} value={text} onChange={handleChange} id="exampleFormControlTextarea1" rows="10"></textarea>
                 <button type="button" class="btn btn-primary my-3 mx-2 custom-button" onClick={handleUpperCase}>Convert to UpperCase</button>
                 <button type="button" class="btn btn-primary my-3 mx-2 custom-button" onClick={handleLowerCase}>Convert to LowerCase</button>
                 <button type="button" class="btn btn-primary my-3 mx-2 custom-button" onClick={handleCopy}>Copy to ClipBoard</button>
