@@ -6,7 +6,7 @@ export default function About({ mode }) {
   const bgColorClass = mode === 'light' ? 'bg-light' : 'bg-dark';
 
   return (
-    <div className={`about-container ${textColorClass} ${bgColorClass}`}>
+    <div id="about" className={`about-container ${textColorClass} ${bgColorClass}`}>
       <h1 className="about-heading">TextUtils Website</h1>
       <p className={`about-description ${textColorClass}`}>
         The website offers a simple and user-friendly interface where you can input any text and use various tools to manipulate and analyze it. Here are the main features of the website:

@@ -4,6 +4,13 @@ import './App.css';
 import React, { useState } from 'react'
 import About from './components/About';
 import Alert from './components/Alert';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Routes
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -34,16 +41,16 @@ function App() {
   
 
   return (
-    <>
+    <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <div className="container my-5">
-        <TextForm showAlert={displayMe} heading="Welcome to TextUtlis" mode={mode} ></TextForm>
+        <Routes>
+          <Route exact path='/' element={<TextForm showAlert={displayMe} heading="Welcome to TextUtlis" mode={mode} ></TextForm>} />
+          <Route path='/about' element={<About mode={mode} />} />
+        </Routes>
       </div>
-      <div className="container my-5">
-        <About mode={mode} />
-      </div>
-    </>
+    </Router>
   );
 }
 
