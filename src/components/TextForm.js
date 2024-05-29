@@ -5,6 +5,12 @@ export default function TextForm(props) {
     const [text, setText] = useState('');
     const [syllables, setSyllables] = useState(0);
 
+    const myStyle = {
+        border: '1px solid black',
+        margin: '10px',
+        padding: '20px',
+    }
+
     const countSyllables = () => {
       const regex = /[aeiouAEIOU]+/g;
       const matches = text.match(regex);
@@ -56,7 +62,7 @@ export default function TextForm(props) {
             <p>{0.008 * text.split(" ").length} minutes read</p>
             <p>Syllables: {syllables}</p>
         </div>
-        <div className="container">
+        <div className="container" style={myStyle}>
             <h3>Preveiw</h3>
             <p>{text}</p>
         </div>
