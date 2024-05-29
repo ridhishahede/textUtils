@@ -38,13 +38,13 @@ function App() {
   };
 
   return (
-    <Router basename="/REPOSITORY">
+    <Router basename="/textUtils">
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-5">
         <Routes>
           <Route exact path='/' element={<TextForm showAlert={displayMe} heading="Welcome to TextUtils" mode={mode} />} />
-          <Route path='/about' element={<About mode={mode} />} />
+          <Route exact path='/about' element={<About mode={mode} />} />
         </Routes>
       </div>
     </Router>
