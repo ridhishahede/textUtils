@@ -38,12 +38,12 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/REPOSITORY">
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-5">
         <Routes>
-          <Route exact path='/' element={<TextForm showAlert={displayMe} heading="Welcome to TextUtlis" mode={mode} />} />
+          <Route exact path='/' element={<TextForm showAlert={displayMe} heading="Welcome to TextUtils" mode={mode} />} />
           <Route path='/about' element={<About mode={mode} />} />
         </Routes>
       </div>
