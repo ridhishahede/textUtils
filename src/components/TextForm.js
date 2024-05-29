@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../styles/TextForm.css'
 
 export default function TextForm(props) {
 
@@ -49,11 +50,11 @@ export default function TextForm(props) {
             <h1>{props.heading}</h1>
             <div className="container mb-3">
                 <textarea className="form-control" value={text} onChange={handleChange} id="exampleFormControlTextarea1" rows="10"></textarea>
-                <button type="button" class="btn btn-primary my-3 mx-2" onClick={handleUpperCase}>Convert to UpperCase</button>
-                <button type="button" class="btn btn-primary my-3 mx-2" onClick={handleLowerCase}>Convert to LowerCase</button>
-                <button type="button" class="btn btn-primary my-3 mx-2" onClick={handleCopy}>Copy to ClipBoard</button>
-                <button type="button" class="btn btn-primary my-3 mx-2" onClick={countSyllables}>Count Syllables</button>
-                <button type="button" class="btn btn-primary my-3 mx-2" onClick={handleClearText}>Clear Text</button>
+                <button type="button" class="btn btn-primary my-3 mx-2 custom-button" onClick={handleUpperCase}>Convert to UpperCase</button>
+                <button type="button" class="btn btn-primary my-3 mx-2 custom-button" onClick={handleLowerCase}>Convert to LowerCase</button>
+                <button type="button" class="btn btn-primary my-3 mx-2 custom-button" onClick={handleCopy}>Copy to ClipBoard</button>
+                <button type="button" class="btn btn-primary my-3 mx-2 custom-button" onClick={countSyllables}>Count Syllables</button>
+                <button type="button" class="btn btn-primary my-3 mx-2 custom-button" onClick={handleClearText}>Clear Text</button>
             </div>
         </div>
         <div className="conatiner my-5">
