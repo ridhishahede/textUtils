@@ -57,13 +57,13 @@ export default function TextForm(props) {
                 <button type="button" class="btn btn-primary my-3 mx-2 custom-button" onClick={handleClearText}>Clear Text</button>
             </div>
         </div>
-        <div className="conatiner my-5">
+        <div className={`conatiner my-5 text-${props.mode === 'light'?'dark':'light'}`}>
             <h3>Your text report</h3>
             <p>{text.split(" ").length} words, {text.length} characters</p>
             <p>{0.008 * text.split(" ").length} minutes read</p>
             <p>Syllables: {syllables}</p>
         </div>
-        <div className="container" style={myStyle}>
+        <div className={`conatiner my-5 text-${props.mode === 'light'?'dark':'light'}`} style={myStyle}>
             <h3>Preveiw</h3>
             <p>{text}</p>
         </div>
