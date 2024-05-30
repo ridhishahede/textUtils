@@ -16,7 +16,6 @@ export default function TextForm(props) {
       const regex = /[aeiouAEIOU]+/g;
       const matches = text.match(regex);
       setSyllables(matches.length);
-      props.showAlert("Syllables displayed" , "primary");
     };
 
     const handleUpperCase = ()=> {
