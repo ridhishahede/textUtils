@@ -7,6 +7,17 @@
     transition: background-color 0.3s ease;
 }
 
+.custom-button:disabled, .custom-button[disabled] {
+    background-color: rgb(198, 218, 184);
+    color: gray;
+    cursor: not-allowed;
+}
+
 .custom-button:hover {
     background-color: #250;
+    color: white;
+}
+
+.form-control::placeholder {
+    color: gray;
 }

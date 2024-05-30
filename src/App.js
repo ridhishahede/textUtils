@@ -4,11 +4,6 @@ import './App.css';
 import React, { useState } from 'react';
 import About from './components/About';
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -38,17 +33,17 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />  
       <div className="container my-5">
-        <TextForm showAlert={displayMe} heading="Welcome to TextUtils" mode={mode} />
+        <TextForm showAlert={displayMe} heading="Try TextUtilis - Case converter, Word counter, Character counter, Syllables counter and more" mode={mode} />
       </div>
 
       <div className="container my-5">
         <About mode={mode} />
       </div>
-    </Router>
+    </>
   );
 }
 
